@@ -318,7 +318,7 @@ class fmCURL
       }
 
       if ($curlResult != '') {
-         $result = $options['decodeAsJSON'] ? json_decode($curlResult, true) : $curlResult;
+         $result = $options['decodeAsJSON'] ? json_decode($curlResult, true, 512, JSON_BIGINT_AS_STRING) : $curlResult;
       }
 
       $length = number_format(strlen($curlResult), 0, '.', ',');
